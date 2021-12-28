@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Bootstrap 4 Github Pages
+title: Data Journalism Lab
 ---
-
-[![GitHub Repo stars](https://img.shields.io/github/stars/nicolas-van/bootstrap-4-github-pages?style=social)](https://github.com/nicolas-van/bootstrap-4-github-pages)
 
 A [Bootstrap 4](https://getbootstrap.com/) template project for [Github Pages](https://pages.github.com/) and [Jekyll](https://jekyllrb.com/).
 
@@ -85,12 +83,6 @@ Please note that, to ensure maximum compatibility with Github Pages, the `Gemfil
 ## Known issues
 
 * Bootstrap 4 should normally be post-processed using [Autoprefixer](https://github.com/postcss/autoprefixer). Even if it is possible to use autoprefixer with Jekyll, it is not possible with a classic Github Pages installation without adding some kind of pre-processing before publication. Since this project mostly aims compatibility with Github Pages I prefer to keep it that way. The consequences of this choice is that some Bootstrap features could not work as expected on older browsers.
-
-## How to contribute
-
-Like this project ? [Consider adding a star on Github](https://github.com/nicolas-van/bootstrap-4-github-pages).
-
-[You can also see the contribution guide](https://github.com/nicolas-van/bootstrap-4-github-pages/blob/master/CONTRIBUTING.md).
 
 ## Websites using Bootstrap 4 Github Pages
 
