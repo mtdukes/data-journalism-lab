@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
@@ -9,17 +9,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <!-- NOTE: newer versions of boostrap use data-bs-toggle instead of data-toggle -->
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tutorials</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/_pages/00-setting-up.html">Setting up</a>
+            <!--<a class="dropdown-item" href="/_pages/00-intro-to-tidyverse.html">R & the Tidyverse</a>-->
+            <!--<a class="dropdown-item" href="/_pages/01-data-viz.html">Data visualization</a>-->
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/_pages/glossary.html">R glossary</a>
+          </div>
+        </li>
         {%- for path in page_paths -%}
           {%- assign my_page = site.pages | where: "path", path | first -%}
           {%- if my_page.title -%}
           <li class="nav-item">
-            <a class="nav-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            <a class="nav-link {% if page.url == my_page.url %}active{% endif %}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
           </li>
           {%- endif -%}
         {% endfor -%}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.github.repository_url }}">Fork me on Github</a>
-        </li>
       </ul>
     </div>
   </div>

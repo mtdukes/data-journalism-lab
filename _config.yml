@@ -16,7 +16,7 @@
 title: Data Journalism Lab
 email: "tyler.dukes@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
-  A Bootstrap 4 start up project for Jekyll and Github Pages
+  A repository for information and tutorials for the Data Journalism Lab.
 #baseurl: "" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mtdukes
@@ -31,6 +31,11 @@ plugins:
 
 # A list of the pages to display in the navigation bar
 header_pages:
+  - _pages/contact.md
+
+# A list of directories to include
+include:
+  - _pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
