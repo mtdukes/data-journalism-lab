@@ -19,7 +19,7 @@ There's a variety of ways to work with R, which is the actual __language__. For 
 
 Download and install the [latest version of R from CRAN](https://cran.rstudio.com/), the "Comprehensive R Archive Network," for your operating system:
 
-https://cran.rstudio.com/
+[https://cran.rstudio.com/](https://cran.rstudio.com/)
 
 No need to change any of the settings in the default install wizard.
 
@@ -29,7 +29,7 @@ No need to change any of the settings in the default install wizard.
 
 Download and install the latest version of RStudio (the website should automatically suggest the version for your operating system):
 
-https://www.rstudio.com/products/rstudio/download/#download
+[https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download)
 
 *NOTE: If you're on a Mac, you may have to drag and drop the RStudio icon into your Applications folder to complete the install.*
 
