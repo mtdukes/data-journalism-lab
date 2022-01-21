@@ -9,7 +9,7 @@ Welcome to the homepage for the Data Journalism Lab, a collaborative project to 
 
 Our project is broadly organized into two categories – Tutorials and Resources. Browse the current entries for each in the navigation menu at the top.
 
-This is a work in progress, so if there are features you'd like to see, [contact us](/_pages/contact.html).
+This is a work in progress, so if there are features you'd like to see, [contact us]({{ site.baseurl }}/_pages/contact.html).
 
 ### Contributing
 
