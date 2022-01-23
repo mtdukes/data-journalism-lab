@@ -27,7 +27,7 @@ To save us some headaches down the road, we want to tell RStudio where we want t
 
 ```R
 #set working directory to the data folder of the downloaded repository
-setwd("~/Desktop/data-journalism-with-r/data")
+setwd("~/Desktop/data_journalism_with_r/")
 ```
 
 Execute the code by clicking "Run" or with <kbd>CMD</kbd> + <kbd>Enter</kbd>.
