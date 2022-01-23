@@ -17,8 +17,8 @@ After starting RStudio, click "File" > "New File" > "R Script" in the menu to st
 At the top of your script, write a quick comment that tells you something about what your new script does. Starting each line with a `#` character will ensure this line is not executed when you run your code.
 
 ```R
-    #R script for the Duke Data Journalism Lab
-    #workshop on Jan. 21
+#R script for the Duke Data Journalism Lab
+#workshop on Jan. 21
 ```
 
 To save us some headaches down the road, we want to tell RStudio where we want to do our work by setting our working directory. It's also good practice to comment your code as you go for readability.
@@ -26,8 +26,8 @@ To save us some headaches down the road, we want to tell RStudio where we want t
 <div class="alert alert-warning"><b>NOTE:</b> The exact path here &#x2935; depends on where you created your new folder.</div>
 
 ```R
-    #set working directory to the data folder of the downloaded repository
-    setwd("~/Desktop/data-journalism-with-r/data")
+#set working directory to the data folder of the downloaded repository
+setwd("~/Desktop/data-journalism-with-r/data")
 ```
 
 Execute the code by clicking "Run" or with <kbd>CMD</kbd> + <kbd>Enter</kbd>.

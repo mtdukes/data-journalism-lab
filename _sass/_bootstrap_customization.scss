@@ -65,3 +65,30 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;70
     text-decoration: none;
   }
 }
+
+// Code copy
+pre.highlight{
+  position: relative;
+}
+
+pre.highlight .copy-code-button {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  margin:0px;
+  padding: 0px 5px 5px 5px;
+}
+
+pre.highlight > button {
+  opacity: 0;
+}
+
+pre.highlight:hover > button {
+  opacity: 1;
+}
+
+pre.highlight > button:active,
+pre.highlight > button:focus {
+  opacity: 1;
+}
+
