@@ -522,6 +522,7 @@ Line charts aren't all R can do with data visualization, but being able to creat
 In future workshops, we'll leverage what we've learned so far – along with a few other features of `ggplot` – to explore relationships between variables. In particular: When is correlation _also_ causation?
 
 ## Additional resources
+* [Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)
 * [A big article about wee things](https://www.propublica.org/nerds/a-big-article-about-wee-things)
 * [ggplot cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf)
 * [Bar and line graphs - R Cookbook](http://www.cookbook-r.com/Graphs/Bar_and_line_graphs_(ggplot2)/)
