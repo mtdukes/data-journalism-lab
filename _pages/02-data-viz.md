@@ -336,11 +336,12 @@ nc_covid <- covid_time_series %>%
   mutate(date = as.Date(date, format="%m/%d/%y"))
 ```
 
-Just like we did before, let's use our `lag()` and `rollmean()` functions.
+Just like we did before, let's use our `lag()` and `rollmean()` functions. But first, we need to use the `group_by()` function to group by county. That way, our calculations are only conducted within the data for each county.
 
 ```R
 #calculate new cases and rolling average for each county
-nc_covid_rolling <- nc_covid %>% 
+nc_covid_rolling <- nc_covid %>%
+  group_by(Admin2) %>% 
   mutate(new_cases = case_count - lag(case_count,1)) %>% 
   mutate(rolling_new = round(rollmean(new_cases, 7, na.pad = TRUE, align="right")))
 ```
