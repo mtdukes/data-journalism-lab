@@ -5,8 +5,6 @@ title: Intro to R and the Tidyverse
 
 This workshop will help you get started with a few foundational steps for importing, cleaning and analyzing data using R, the desktop development environment RStudio and several common libraries for working with data.
 
-In this repository, you'll find both the data we'll be working with and the full R script for our in-class exercises for your review.
-
 ## Getting started
 Before we boot up RStudio, let's set up a place to store our data and working files. Somewhere in your computer's directory (it could be your Desktop or Documents folder, for example) create a new folder and give it a name (for example: `data_journalism_with_r`).
 

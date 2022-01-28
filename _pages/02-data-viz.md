@@ -1,40 +1,46 @@
 ---
 layout: page
-title: Data visualization with R
+title: Data visualition with R - Part 1
 ---
 
-In this repository, you'll find both the data we'll be working with and the full R script for our in-class exercises for your review.
+This workshop will introduce a few simple yet powerful functions for visualizing data with the `ggplot` package.
 
 ## Getting started
-[Download and unzip this file](https://github.com/mtdukes/data-journalism-with-r/archive/main.zip), which contains the notes and data we'll be using in today's workshop. You might want to move the unzipped file to your Desktop or some other location that's easy for you to find. The full, detailed code for this lesson [is available here](https://github.com/mtdukes/data-journalism-with-r/blob/main/data/workshop20210326.R).
+Like we've done [in our previous workshop]({{ site.baseurl }}/_pages/01-intro-to-tidyverse.html), let's set up a place to store our data and working files. Somewhere in your computer's directory (it could be your Desktop or Documents folder, for example) create a new folder and give it a name (for example: `data_journalism_with_r`).
 
-After starting RStudio, click "File" > "New File" > "R Script" in the menu to start a new script. Then go ahead and "Save As..." to give it a name. You should get in the habit of saving your work often.
+After starting RStudio, click "File" > "New File" > "R Script" in the menu to start a new script. Then go ahead and "Save As..." to give it a name.
 
-At the top of your script, write a quick comment that tells you something about what your new script does. Starting each line with a `#` character will ensure this line is not executed when you run your code.
+Add a comment so we know what our script does.
 
 ```R
 #R script for the Duke Data Journalism Lab
-#workshop on March 26, 2021
+#workshop on Jan. 28, 2022 on data viz
 ```
 
-To save us some headaches down the road, we want to tell RStudio where we want to do our work by setting our working directory. It's also good practice to comment your code as you go for readability.
+Set our working directory where we'll store all our downloaded file.
+
+<div class="alert alert-warning"><b>NOTE:</b> The exact path here &#x2935; depends on where you created your new folder.</div>
 
 ```R
 #set working directory to the data folder of the downloaded repository
-setwd("~/Desktop/data-journalism-with-r/data")
+setwd("~/Desktop/data_journalism_with_r")
 ```
 
-Execute the code by clicking "Run" or with **CMD + Enter**.
+Execute the code by clicking "Run" or with <kbd>CMD</kbd> + <kbd>Enter</kbd>.
 
-We should have most of our packages already install, but we'll use a few more.
+We should have most of our packages already installed, but we'll use a few more in this walkthrough.
+
+<div class="alert alert-warning"><b>NOTE:</b> This step &#x2935; we'll only have to do ONCE for each package.</div>
 
 ```R
 #install other packages
-install.packages('zoo')
-install.packages('geofacet')
+install.packages('zoo') #handy set of functions for advanced calculations
+install.packages('geofacet') #neat tools for visualization
 ```
 
-Load our [Tidyverse](https://www.tidyverse.org/) package and any others. **This step we'll have to do each time we start R or start a new workspace.**
+Load our [Tidyverse](https://www.tidyverse.org/) package and any others.
+
+<div class="alert alert-warning"><b>NOTE:</b> This step &#x2935; we'll have to do EACH TIME we start R or start a new workspace.</div>
 
 ```R
 #load our packages from our library into our workspace
@@ -42,79 +48,89 @@ library(tidyverse)
 library(knitr)
 library(zoo)
 library(geofacet)
-library(stringr)
 ```
+<div class="alert alert-success"><b>PRO TIP:</b> If you get an error about R not being able to locate a package, make sure you have it installed!</div>
 
----
-***Note:** If you get an error about R not being able to locate a package, you may have to install it if you didn't do this in our last workshop:*
+## Downloading the data
+
+The data we'll be working with today comes from [Johns Hopkins University's COVID-19 dataset](https://github.com/CSSEGISandData), which has become a go-to source of data on the spread of the virus.
+
+Specifically, we'll be using [time-series data on case counts by county](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv), which the research group publishes as a comma-separated value file via its GitHub page.
+
+__Right click__ on the "Download" button to and click "Save Link As...", then save the file to your chosen working directory. To simplify the filename, we're going to save it as `jhu_covid.csv`.
+
+![JHU COVID data download]({{ site.baseurl }}/assets/screenshots/r002_dl_jhu.gif)
+
+Once our file is saved, we'll load it in into a new dataframe called `covid_time_series` with a function from our Tidyverse package.
 
 ```R
-#install the tidyverse package
-install.packages("tidyverse")
-install.packages("knitr")
-install.packages("zoo")
-install.packages("geofacet")
-install.packages("stringr")
-```
----
-
-The data we'll be working with today comes from [Johns Hopkins University's COVID-19 dataset](https://github.com/CSSEGISandData), which has become a go-to source of data on the spread of the virus. Specifically, we'll be using [time-series data on case counts by county](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv). Load it in with a function from our Tidyverse package.
-
-```R
-#load in our fresh data
+#load in our jhu covid data
 covid_time_series <- read_csv('jhu_covid.csv')
 ```
 
-Take note that in your "Environment" window (by default in the top left), you should be able to see your `covid_time_series` dataframe with 3,340 rows and 440 variables.
+Take note that in your "Environment" window (by default in the top right), you should be able to see your `covid_time_series` dataframe with more than 3,000 rows and hundreds of variables.
+
+You can open the dataframe by clicking on its name in the "Environment" pane.
+
+What do you notice about the shape of the data – in other words, the columns and rows? How do you expect it to change from day to day?
 
 ## Basic gut checks
 
-Before we start working with our data in earnest, let's get to know our data a little bit. You can click on the dataset in your environment window to view it in a new window, much like you would in Excel or some other spreadsheet software.
+Before we start working with our data in earnest, let's get to know our data a little bit. 
 
-We can see a number of columns that are pretty self explanatory. Some less so. We'll need to explore those as we go. Navigate back to your script window, and let's do a few things to make sure our head is on straight. For this section, we'll be using the "pipe," which looks like this `%>%` to chain together operations on our data.
+We can see a number of columns that are pretty self explanatory. Some less so. We'll need to explore those as we go. Navigate back to your script pane, and let's do a few things to make sure our head is on straight.
 
-First, let's check to make sure we got it all through the load.
+For this section, we'll be using the Tidyverse "pipe," which looks like this `%>%` to chain together operations on our data.
 
-```R
-#count the total number of rows
-covid_time_series %>% 
-  nrow()
-  ```
+<div class="alert alert-success"><b>PRO TIP:</b> If you want to save some time typing, you can use the keyboard shortcut <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> to add a pipe.</div>
 
-Let's focus on North Carolina.
+We can see there's a lot of data here. Let's focus on North Carolina using the `filter()`, then the `nrow()` functions.
 
 ```R
+#count the number of rows for NC only
 covid_time_series %>%
-  filter(Province_State == 'North Carolina') %>% 
-  nrow()
-  ```
+  filter(Province_State == 'North Carolina') %>% #filter for North Carolina
+  nrow() #count the rows
+```
 
 That should return a value of 102.
 
-But wait! There are only 100 counties in North Carolina. So what's going on?
+But wait! There are only __100 counties__ in North Carolina.
+
+So what's going on? Let's take a closer look.
 
 ```R
 #examine the county list for the NC data
-#and put it in a nice table
+#and put it in a nice table with kable
 covid_time_series %>%
-  filter(Province_State == 'North Carolina') %>% 
-  select(Admin2) %>% 
-  kable('simple')
-  ```
+  filter(Province_State == 'North Carolina') %>% #filter for North Carolina
+  select(Admin2) %>% #select allows us to return only specific columns
+  kable('simple') #make it pretty
+```
 
 Looks like we've got two unexpected values: "Unassigned" and "Out of NC", so we'll need to make a note to filter those out in the future.
 
-Now let's make sure this data roughly matches another source, just because we're paranoid.
+<div class="alert alert-success"><b>PRO TIP:</b> It's a good idea to keep a notes file (or notepad) that contains some of your running questions/observations about the data. We typically call this a <b>data diary</b>.</div>
+
+We can see that these numbers indicate positive COVID-19 cases by county, day by day. But what if we wanted the total for the whole state? Which column would want we to sum?
+
+Let's do that – quickly – and make sure this data roughly matches another source, just because we're paranoid.
+
+We'll use the `summarize()` function to sum up the latest date column.
+
+<div class="alert alert-warning"><b>NOTE:</b> Notice we're using the <code>`</code> symbol (called a backtick) here &#x2935; instead of a single or double quote for our date column name? Backticks are used when you've got weird characters in your column names (in this case, a <code>/</code> symbol. It's a good reason why using clean column names is always a good idea!</div>
 
 ```R
 #count up the total number of cases for the last date
 covid_time_series %>%
-  filter(Province_State == 'North Carolina') %>% 
-  summarize(across('3/25/21',sum))
+  filter(Province_State == 'North Carolina') %>%
+  summarize(total = sum(`1/25/22`))
 ```
-Does that match the latest data from the [N.C. Department of Health and Human Services' COVID-19 dashboard](https://covid19.ncdhhs.gov/dashboard)?
+Does that match the latest data from the N.C. Department of Health and Human Services' [COVID-19 dashboard](https://covid19.ncdhhs.gov/dashboard)?
 
-## Change over time with a simple line chart
+If not, why not?
+
+## Wide vs. long data
 
 As you may have gathered from the "time series" element of this data, we probably want to take a look at change in COVID case counts over time. Let's simplify things by looking at one specific county – Durham.
 
@@ -125,72 +141,100 @@ durham_covid <- covid_time_series %>%
   select(-UID, -iso2, -iso3, -code3, -Country_Region, -Lat, -Long_, -Combined_Key)
 ```
 
-We're going to be using ggplot, a library within the Tidyverse, to do some of our charting and graphing. But there's a formatting problem here: This data is current "wide." We need it to be "long" to conform to the formatting rules of the ggplot library (and for general readability). This will also allow us to format the dates correctly.
+We're going to use `ggplot`, a package that works in tandem with the Tidyverse, to do some of our charting and graphing.
+
+But there's a formatting problem here: This data is current "wide." We need it to be "long" to conform to the formatting rules of the ggplot library (and for general readability). We can also take this opportunity to format the dates correctly.
+
+![Wide vs. long data]({{ site.baseurl }}/assets/screenshots/r002_wide_long.png)
+
+So we'll need to do a little conversion with the `pivot_longer()` function, which basically just transposes the data based on a few parameters.
 
 ```R
 #reformat our data from wide to long
 #by telling our function what columns we don't want split
 #and clean up our date column
-durham_covid <- durham_covid %>% 
-  pivot_longer(!c(FIPS,Admin2,Province_State), names_to = 'date', values_to = 'case_count') %>% 
-  mutate(date = as.Date(date, format="%m/%d/%y"))
+durham_covid_long <- durham_covid %>% 
+  pivot_longer(!c(FIPS, Admin2, Province_State), #do not transpose these columns
+    names_to = 'date', #give our transposed data a column name
+    values_to = 'case_count' #give our transposed values a column name
+    ) %>% 
+  mutate(date = as.Date(date, format="%m/%d/%y")) #fix our date values by telling R what format to expect
 ```
 
-Now, if you check the `durham_covid` dataframe, you'll see the 400-odd columns transform into 400-odd rows.
+Now, if you check the `durham_covid` dataframe, you'll see our hundreds of columns transform into hundreds of rows!
 
-Using the ggplot package baked into Tidyverse, let's generate a simple plot of cases over time in Durham. After this runs, you should see this in the "Plots" window in the lower right-hand corner of your R Studio workspace.
+## Simple line charts
+
+Using the `ggplot` package built right into Tidyverse, let's generate a simple plot of cases over time in Durham. After this runs, you should see this in the "Plots" pane in the lower right-hand corner of your R Studio workspace.
+
+<div class="alert alert-warning"><b>NOTE:</b> Pay attention to the position of the <code>+</code> symbol and the <code>%>%</code> symbol in the code below. &#x2935; The ggplot package works by <b>adding</b> different elements to the plot vs. <b>chaining</b> the output of one function to the next, like the pipe operator does.</div>
 
 ```R
 #plot the case count over time
-durham_covid %>% 
-  ggplot(aes(date, case_count))+
-  geom_line()
+durham_covid_long %>% 
+  ggplot(aes(date, case_count)) + #define the x and y axes
+  geom_line() #make a line chart
 ```
 
-Cool, but ugly. Let's introduce a few styling elements to label and clean it up.
+Cool! But also very ugly.
+
+![Ugly plot incoming.]({{ site.baseurl }}/assets/images/r002_ugly_plot.png)
+
+Let's introduce a few styling elements to label and clean it up. We can also filter the data to eliminate all the wasted space at the start of the graph, when there were no COVID cases.
 
 ```R
-durham_covid %>%
-  filter(date > '2020-03-01') %>% 
-  ggplot(aes(date, case_count))+
-  geom_line(color = '#2b8cbe') +
-  scale_x_date(date_breaks = '2 months', date_labels = "%b %y") +
-  labs(title = "Durham COVID-19 case counts over time",
+#make a prettier plot by adding in styling in ggplot
+durham_covid_long %>%
+  filter(date > '2020-03-01') %>% #only start charting after March 2020, when cases started
+  ggplot(aes(date, case_count)) + #define the x and y axes
+  geom_line(color = '#2b8cbe') + #make a line chart
+  scale_x_date(date_breaks = '2 months', date_labels = "%b %y") + #specify a date interval
+  labs(title = "Durham COVID-19 case counts over time", #label our axes
        caption = "SOURCE: Johns Hopkins University",
        x = "",
        y = "Case count") +
-  theme(strip.text.x = element_text(size = 10),
+  theme(strip.text.x = element_text(size = 10), #do a little styling
         strip.background.x = element_blank(),
         axis.line.x = element_line(color="black", size = 0.25),
         axis.line.y = element_line(color="black", size = 0.25),
-        panel.grid.major.x = element_line( color="grey", size = 0.25 ) ,
-        panel.grid.major.y = element_line( color="grey", size = 0.25 ) , 
+        panel.grid.major.x = element_line( color="grey", size = 0.25 ),
+        panel.grid.major.y = element_line( color="grey", size = 0.25 ), 
         axis.ticks = element_blank(),
         panel.background = element_blank(),
         plot.title = element_text(size = 12),
   )
 ```
 
-We can certainly see some patterns in this data, but it's a difficult. That's because we know that the COVID-19 case counts grow over time. What we're more interested in is *how much* that count grows over time. So we need to look at *new cases* more closely.
+That's a little better!
 
-To do that, we'll add a new column with the `lag` function.
+![Much prettier plot incoming.]({{ site.baseurl }}/assets/images/r002_prettier_line.png)
+
+## Calculating rolling averages
+
+We can certainly see some patterns in this data, but it's a bit difficult. That's because we _know_ that the COVID-19 case counts grow over time – case counts don't go down, they go up.
+
+What we're more interested in is *how much* that count grows over time. So we need to look at *new cases* more closely.
+
+To do that, we'll add a new column with the handy `lag()` function. This essentially allows us to "look back" at previous values in our rows and do some math with what we find.
+
+In this case, we want to use `mutate()` to create a new column called `new_cases`, subtracting the case count one day ago from _today's_ case count.
 
 ```R
 #calculate new cases as a new column
-durham_covid <- durham_covid %>%
-  mutate(new_cases = case_count - lag(case_count,1))
+durham_covid_new_cases <- durham_covid_long %>%
+  mutate(new_cases = case_count - lag(case_count, 1)) #calculate new cases using current date and previous date's case count
 ```
 
-Now let's chart it again, just substituting our new cases for our case count.
+Now let's chart it again, substituting our new cases for our case count.
 
 ```R
 #chart new cases instead of cases overall
-durham_covid %>%
+durham_covid_new_cases %>%
   filter(date > '2020-03-01') %>% 
-  ggplot(aes(date, new_cases))+
+  ggplot(aes(date, new_cases)) + #swap in our new_cases variable for the y axis
   geom_line(color = '#2b8cbe') +
   scale_x_date(date_breaks = '2 months', date_labels = "%b %y") +
-  labs(title = "Durham COVID-19 case counts over time",
+  labs(title = "New Durham COVID-19 cases over time", #tweak our chart title
        caption = "SOURCE: Johns Hopkins University",
        x = "",
        y = "Case count") +
@@ -198,32 +242,43 @@ durham_covid %>%
         strip.background.x = element_blank(),
         axis.line.x = element_line(color="black", size = 0.25),
         axis.line.y = element_line(color="black", size = 0.25),
-        panel.grid.major.x = element_line( color="grey", size = 0.25 ) ,
-        panel.grid.major.y = element_line( color="grey", size = 0.25 ) , 
+        panel.grid.major.x = element_line( color="grey", size = 0.25 ),
+        panel.grid.major.y = element_line( color="grey", size = 0.25 ), 
         axis.ticks = element_blank(),
         panel.background = element_blank(),
         plot.title = element_text(size = 12),
   )
 ```
 
-That's... spiky. And even more complicated. One way to smooth out the jitter is to take a rolling average, so we'll use a function from our Zoo package to calculate that average over 7 days.
+![Are you a hairstyle from the late 90s? Cause you are spiky.]({{ site.baseurl }}/assets/images/r002_spiky_line.png)
+
+That's... spiky. And even more complicated. Why might that be?
+
+One way to smooth out the jitter is to take a __rolling average__.
+
+For that, we'll use a function from our `zoo` package to calculate that average over 7 days. It's called `rollmean()` and it accepts a few parameters that tell it how we want to calculate our rolling window.
 
 ```R
 #calculate rolling average of new cases as a new column
-durham_covid <- durham_covid %>%
-  mutate(rolling_new = round(rollmean(new_cases, 7, na.pad = TRUE, align="right")))
-  ```
+durham_covid_rolling <- durham_covid_new_cases %>%
+  mutate(rolling_new = round( #create a new variable and round it to a whole number
+    rollmean(new_cases, #specify our variable
+             7, #calculate over seven days
+             fill = NA, #ignore if there are blank cells
+             align = "right") #set the direction we want our rolling window to go.
+    ))
+```
 
 With that column calculated, we can chart our case growth again – and see the trends much more clearly.
 
 ```R
 #chart the rolling average of cases instead of cases overall
-durham_covid %>%
+durham_covid_rolling %>%
   filter(date > '2020-03-01') %>% 
-  ggplot(aes(date, rolling_new))+
+  ggplot(aes(date, rolling_new)) + #swap in our new rolling_new variable for the y axis
   geom_line(color = '#2b8cbe') +
   scale_x_date(date_breaks = '2 months', date_labels = "%b %y") +
-  labs(title = "Durham COVID-19 case counts over time",
+  labs(title = "Rolling average of new Durham COVID-19 cases over time", #tweak our chart title
        caption = "SOURCE: Johns Hopkins University",
        x = "",
        y = "Case count") +
@@ -231,22 +286,47 @@ durham_covid %>%
         strip.background.x = element_blank(),
         axis.line.x = element_line(color="black", size = 0.25),
         axis.line.y = element_line(color="black", size = 0.25),
-        panel.grid.major.x = element_line( color="grey", size = 0.25 ) ,
-        panel.grid.major.y = element_line( color="grey", size = 0.25 ) , 
+        panel.grid.major.x = element_line( color="grey", size = 0.25 ),
+        panel.grid.major.y = element_line( color="grey", size = 0.25 ), 
         axis.ticks = element_blank(),
         panel.background = element_blank(),
         plot.title = element_text(size = 12),
   )
 ```
 
+Not bad at all!
+
+![Rolling averages smooth out day-to-day variations]({{ site.baseurl }}/assets/images/r002_rolling_average.png)
+
+You can see some clear impacts of the recent surge in COVID-19 cases over the holidays. It's so large, in fact, that it blows out most of the detail from the rest of the almost two years we've been tracking the virus.
+
+There's plenty more to explore here. For example: How might we tweak our code to focus specifically on the last two-month period?
+
 ## Patterns in small multiples
 
-What if we want to take a much broader look than just Durham? We can, and it's easy.
+What if we want to take a much broader look at countys other than just Durham? We can, and it's easy!
 
 We can use the same exact techniques and calculate these new columns for each of North Carolina's 100 counties. We'll start with a filtered, cleaned up set focusing on the whole state.
 
+We'll start with our original `covid_time_series` dataframe, which we smartly left intact. In the code below, we will:
+* Filter for North Carolina
+* Filter out those pesky rows that aren't real counties
+* Use the `select()` function to leave out columns we don't need
+* Use the `pivot_longer()` function to convert our data from wide to long format
+* Fix the formatting on our dates.
+
+<div class="alert alert-warning"><b>NOTE:</b> Notice that <code>!</code> symbol we're using here &#x2935; in our <code>filter()</code> function? It's one of the standard logical comparisons used across programming languages:
+<ul>
+  <li><code>==</code> equal to</li>
+  <li><code>!=</code> not equal to</li>
+  <li><code>></code> greater than</li>
+  <li><code><</code> less than</li>
+  <li><code>>=</code> greater than or equal to</li>
+  <li><code><=</code> less than or equal to</li>
+</ul></div>
+
 ```R
-#build out a similar dataset for North Carolina
+#build out a covid dataset for North Carolina
 nc_covid <- covid_time_series %>%
   filter(Province_State == 'North Carolina') %>%
   filter(Admin2 != 'Unassigned') %>% 
@@ -256,12 +336,11 @@ nc_covid <- covid_time_series %>%
   mutate(date = as.Date(date, format="%m/%d/%y"))
 ```
 
-Now, let's use `lag` and `rollmean`, combined with `group_by`, to calculate our new columns.
+Just like we did before, let's use our `lag()` and `rollmean()` functions.
 
 ```R
 #calculate new cases and rolling average for each county
-nc_covid <- nc_covid %>% 
-  group_by(Admin2) %>%
+nc_covid_rolling <- nc_covid %>% 
   mutate(new_cases = case_count - lag(case_count,1)) %>% 
   mutate(rolling_new = round(rollmean(new_cases, 7, na.pad = TRUE, align="right")))
 ```
@@ -269,14 +348,14 @@ nc_covid <- nc_covid %>%
 With that data, we can quickly build out individual charts for any county we want, like this.
 
 ```R
-#charge for different counties
-nc_covid %>%
+#rolling average chart for different counties
+nc_covid_rolling %>%
   filter(date > '2020-03-01') %>%
-  filter(Admin2 == 'Mecklenburg') %>% 
+  filter(Admin2 == 'Mecklenburg') %>% #we'll specify the county in a filter here
   ggplot(aes(date, rolling_new))+
   geom_line(color = '#2b8cbe') +
   scale_x_date(date_breaks = '2 months', date_labels = "%b %y") +
-  labs(title = "Mecklenburg COVID-19 case counts over time",
+  labs(title = "Rolling average of new Mecklenburg COVID-19 cases over time", #make sure to update our chart title
        caption = "SOURCE: Johns Hopkins University",
        x = "",
        y = "Case count") +
@@ -284,23 +363,29 @@ nc_covid %>%
         strip.background.x = element_blank(),
         axis.line.x = element_line(color="black", size = 0.25),
         axis.line.y = element_line(color="black", size = 0.25),
-        panel.grid.major.x = element_line( color="grey", size = 0.25 ) ,
-        panel.grid.major.y = element_line( color="grey", size = 0.25 ) , 
+        panel.grid.major.x = element_line( color="grey", size = 0.25 ),
+        panel.grid.major.y = element_line( color="grey", size = 0.25 ), 
         axis.ticks = element_blank(),
         panel.background = element_blank(),
         plot.title = element_text(size = 12),
   )
 ```
+![Filter for Mecklenburg County.]({{ site.baseurl }}/assets/images/r002_mecklenburg.png)
 
-But let's go further. We can plot all of these counties on one chart, but that's... unhelpful.
+But that's not much better than what we had for our Durham analysis above.
+
+Let's go further!
+
+We can plot all of these counties on one chart. We can even use color to make them easier to differentiate on the plot.
 
 ```R
-nc_covid %>%
+#chart rolling average for all counties, colored by county
+nc_covid_rolling %>%
   filter(date > '2020-03-01') %>%
-  ggplot(aes(date, rolling_new, color=Admin2) ) +
+  ggplot(aes(date, rolling_new, color=Admin2) ) + #no filter this time, but let's use color
   geom_line() +
   scale_x_date(date_breaks = '2 months', date_labels = "%b %y") +
-  labs(title = "COVID-19 case counts over time",
+  labs(title = "Rolling average of new COVID-19 case counts across all counties", #tweak our title
        caption = "SOURCE: Johns Hopkins University",
        x = "",
        y = "Case count") +
@@ -316,19 +401,26 @@ nc_covid %>%
         legend.position = "none"
   )
 ```
+![MY EYES!]({{ site.baseurl }}/assets/images/r002_everything.png)
 
-Instead of looking at everything on the same plot, let's use [small multiples](https://www.propublica.org/nerds/a-big-article-about-wee-things). This approach splits the chart across many different, smaller charts. We'll use some precision, but it will be much, much easier to examine.
+But that's about as unhelpful as it is ugly.
 
-We're shortcutting the styling here, but here goes. This should show up in your plot viewer, but it's probably worth pressing the "Zoom" button to pop the graphic out into a separate window.
+Instead of looking at everything on the same plot, let's use __[small multiples](https://www.propublica.org/nerds/a-big-article-about-wee-things)__.
+
+This approach splits the chart across many different, smaller charts. We'll lose some precision, but it will be much, much easier to examine on a comparative basis (at least, theoretically).
+
+The `geofacet` package has a great function called `facet_geo()` that can plot these small multiples. We can even choose from a [long list of predefined grids](https://cran.r-project.org/web/packages/geofacet/vignettes/geofacet.html) that _roughly_ translate to the geographic locations of features like counties, states or countries (you can even design and submit [your own grid](https://hafen.github.io/grid-designer/) for inclusion in the library).
+
+In this case, we're going to use a predefined grid for North Carolina counties.
 
 ```R
-nc_covid %>% 
+nc_covid_rolling %>% 
   filter(date > '2020-03-01') %>%
-  mutate(Admin2 = str_to_title(Admin2)) %>% 
+  mutate(Admin2 = str_to_title(Admin2)) %>% #convert to title case for readability
   ggplot(aes(date, rolling_new) ) +
   geom_line(color = '#2b8cbe') +
-  facet_geo(~Admin2, grid = "us_nc_counties_grid1") +
-  scale_x_continuous(labels = NULL) +
+  facet_geo(~Admin2, grid = "us_nc_counties_grid1") + #facet over a predefined NC grid we can
+  scale_x_continuous(labels = NULL) + #specify we want a continuous (number) scale
   labs(title = "Rolling average of new cases in NC",
        caption = "SOURCE: Johns Hopkins University",
        x = NULL,
@@ -341,16 +433,29 @@ nc_covid %>%
         plot.title = element_text(size = 12),
   )
 ```
-Pretty interesting. But the reality is that the huge population difference between rural counties and others like Wake and Mecklenburg really blows up are scale. So let's introduce a variable axis.
+
+This should show up in your plot pane, but it's probably worth pressing the "Zoom" button to pop the graphic out into a separate window so you can examine it a little better.
+
+![It looks like North Carolina!]({{ site.baseurl }}/assets/images/r002_rough_geofacet.png)
+
+Pretty interesting.
+
+But the reality is that the huge population difference between rural counties and others like Wake and Mecklenburg really blows up our scale.
+
+So let's introduce a _variable_ axis that recales each chart based on its respective minimums and maximums.
+
+There's something of a tradeoff here: A variable axis can obscure big relative changes in small numbers. But we're interested – at least in this stage – at understanding the _shape_ of the curve, not necessarily its exact _magnitude_.
+
+Because we want to keep that potential misinterpretation in mind, let's remove the y-axis labels and focus on the curve alone.
 
 ```R
 #same thing, but with a variable axis
-nc_covid %>% 
+nc_covid_rolling %>% 
   filter(date > '2020-03-01') %>%
   mutate(Admin2 = str_to_title(Admin2)) %>% 
   ggplot(aes(date, rolling_new) ) +
   geom_line(color = '#2b8cbe') +
-  facet_geo(~Admin2, grid = "us_nc_counties_grid1", scales="free_y") +
+  facet_geo(~Admin2, grid = "us_nc_counties_grid1", scales="free_y") + #the free_y gives our charts a variable axis
   scale_x_continuous(labels = NULL) +
   labs(title = "Rolling average of new cases in NC",
        caption = "SOURCE: Johns Hopkins University",
@@ -360,18 +465,27 @@ nc_covid %>%
         strip.background.x = element_blank(),
         axis.ticks = element_blank(),
         axis.text = element_text(size = 6),
+        axis.text.y = element_blank(), #remove the y axis labels for space
         panel.background = element_blank(),
         plot.title = element_text(size = 12),
   )
 ```
+![A little easier to see patterns here...]({{ site.baseurl }}/assets/images/r002_geofacet_variable.png)
 
-Now we have a new problem! The winter spike was so high, it's essentially blowing out all the other changes. So maybe we focus on what's happened lately by using a simple date filter. Here, we're using Jan. 14, 2021, the date residents 65 and older became eligible for the vaccine.
+One thing we can tell: There was a record-breaking spike in every county, rural or not.
+
+But now we have a new problem!
+
+The winter 2022 spike is so high, it's essentially blowing out all the other changes.
+
+So maybe we focus on what's happened lately by using a simple date filter.
+
+Here, let's start the plot on Nov. 26, the date the World Health Organization designated the new COVID-19 variant with the greek letter "omicron" – and declared it a "variant of concern."
 
 ```R
 #move up the date filter
-#same thing, but with a variable axis
-nc_covid %>% 
-  filter(date > '2021-01-14') %>%
+nc_covid_rolling %>% 
+  filter(date > '2021-11-26') %>%
   mutate(Admin2 = str_to_title(Admin2)) %>% 
   ggplot(aes(date, rolling_new) ) +
   geom_line(color = '#2b8cbe') +
@@ -385,11 +499,31 @@ nc_covid %>%
         strip.background.x = element_blank(),
         axis.ticks = element_blank(),
         axis.text = element_text(size = 6),
+        axis.text.y = element_blank(),
         panel.background = element_blank(),
         plot.title = element_text(size = 12),
   )
 ```
 
-## Relationships with scatter plots
+![Examining omicron]({{ site.baseurl }}/assets/images/r002_omicron_surge.png)
 
-TBD
+We still have a fidelity problem – this technique makes the magnitude hard to understand. But we can still observe things from the shape of the spike that might raise questions.
+
+What do you notice?
+
+## Wrapping up
+
+With just a few additional libraries, we've vastly expanded our ability to quickly clean and plot data on our hunt for patterns.
+
+What questions can we ask of the data now? What patterns do you want to explore more closely? Which of these patterns raise questions we need to answer through additional reporting? These are good things to keep track of in your data diary.
+
+Line charts aren't all R can do with data visualization, but being able to create them adds a powerful tool to our arsenal. 
+
+In future workshops, we'll leverage what we've learned so far – along with a few other features of `ggplot` – to explore relationships between variables. In particular: When is correlation _also_ causation?
+
+## Additional resources
+* [A big article about wee things](https://www.propublica.org/nerds/a-big-article-about-wee-things)
+* [ggplot cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf)
+* [Bar and line graphs - R Cookbook](http://www.cookbook-r.com/Graphs/Bar_and_line_graphs_(ggplot2)/)
+* [Introduction to geofacet](https://cran.r-project.org/web/packages/geofacet/vignettes/geofacet.html)
+* [Gallery of ggplot extensions](https://exts.ggplot2.tidyverse.org/gallery/)
