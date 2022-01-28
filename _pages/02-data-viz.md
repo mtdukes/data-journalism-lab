@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data visualition with R - Part 1
+title: Data visualization with R - Part 1
 ---
 
 This workshop will introduce a few simple yet powerful functions for visualizing data with the `ggplot` package.
