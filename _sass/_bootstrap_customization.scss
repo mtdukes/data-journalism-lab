@@ -92,8 +92,13 @@ pre.highlight > button:focus {
   opacity: 1;
 }
 
+// Custom tweaks
+
 img {
   filter: drop-shadow(1px 4px 6px);
   margin: 5px 0 10px 0;
 }
 
+table {
+  margin-bottom: 10px;
+}
