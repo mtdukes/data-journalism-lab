@@ -279,7 +279,7 @@ vax_main %>%
         panel.grid.major.y = element_line( color="grey", size = 0.25 )
   ) +
   xlab('Median income (thousands of dollars)') + #label the x axis
-  ylab('% fully vaccinated') + #label the y axis
+  ylab('% fully vaccinated') #label the y axis
 ```
 
 ![Looks a little better!]({{ site.baseurl }}/assets/images/r003_prettier_income_plot.png)
