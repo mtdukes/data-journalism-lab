@@ -24,7 +24,7 @@ Submitting a Freedom of Information Act request to a federal agency? Use the Rep
 
 A running list of public records portals in North Carolina. Agencies generally route records requests through these sites, some of which encourage registration.
 
-Know of any we're missing? Contact [@mtdukes](https://twitter.com/mtdukes) on Twitter.
+Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](https://twitter.com/mtdukes/status/1491181364477112322).
 
 #### State agencies
 
