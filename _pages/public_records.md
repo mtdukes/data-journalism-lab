@@ -22,7 +22,7 @@ Submitting a Freedom of Information Act request to a federal agency? Use the Rep
 
 ## <a name="portals"></a>Public records portals
 
-A running list of public records portals in North Carolina. Agencies generally route records requests through these sites, some of which encourage registration.
+A running list of public records portals in North Carolina (and some on the federal level). Agencies generally route records requests through these sites, some of which encourage registration.
 
 Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](https://twitter.com/mtdukes/status/1491181364477112322).
 
@@ -30,11 +30,13 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 
 * [Department of Public Instruction](https://docs.google.com/forms/d/e/1FAIpQLSclz_6zGDUZGoV_67Z3lwfoeopo3dhV_cnolDx7hYcw1Gd09A/viewform)
 * [State Board of Elections](https://ncsbe-nc.nextrequest.com/)
+* [Office of the Chief Medical Examiner](https://www.ocme.dhhs.nc.gov/docrequest.asp)
 
 #### Counties
 
 * [Mecklenburg County](https://mkbgcoeddprr.exterro.net/prr/prrportal.htm)
 * [Wake County](https://wakecounty.nextrequest.com/)
+* [Buncombe County](https://www.buncombecounty.org/governing/depts/communications/default.aspx)
 
 #### Cities and towns
 
@@ -61,6 +63,8 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 #### Federal agencies
 
 * [Administration for Children and Families](https://pal.acf.hhs.gov/)
+* [FBI](https://efoia.fbi.gov/#home)
+* [National Archives – Military Personnel Records](https://www.archives.gov/veterans/military-service-records/standard-form-180.html)
 
 ## Other resources
 
