@@ -46,6 +46,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Town of Chapel Hill](https://www.townofchapelhill.org/government/departments-services/communications-and-public-affairs/supporting-quality-governance/maintaining-public-records/public-records-request)
 * [City of Fayetteville](https://fayettevillenc.nextrequest.com/)
 * [City of Greensboro](https://www.greensboro-nc.gov/government/public-records-requests)
+* [City of Winston-Salem](https://www.cityofws.org/FormCenter/Fire-Department-7/FOIA-Request-172)
 
 #### Public boards
 
@@ -75,3 +76,11 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [How to find stuff in state-level courts](https://docs.google.com/document/d/1DHHv7GS6mycat97RTzlZDkokPZcm3QpoJgQ0W_QqaiY/edit) // Ally Jarmanning
 * [I’ve Sent Out 1,018 Open Records Requests, and This Is What I’ve Learned](https://www.propublica.org/article/open-records-requests-illinois-foia-lessons) // Sandhya Kambhampati
 * [Submit a records request like a pro in 8 easy steps](https://www.wral.com/submit-a-records-request-like-a-pro-in-8-easy-steps/17397199/) // Tyler Dukes & Kelly Hinchcliffe
+
+## Special thanks
+
+A note of gratitude to the fabulous folks (so far) who have contributed resources and links to this page:
+
+* [Lisa Sorg](https://twitter.com/lisasorg)
+* [@RavenRavinoff](https://twitter.com/RavenRavinoff)
+* [Gary Schwab](https://twitter.com/garyschwab)
