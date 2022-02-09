@@ -31,6 +31,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Department of Public Instruction](https://docs.google.com/forms/d/e/1FAIpQLSclz_6zGDUZGoV_67Z3lwfoeopo3dhV_cnolDx7hYcw1Gd09A/viewform)
 * [State Board of Elections](https://ncsbe-nc.nextrequest.com/)
 * [Office of the Chief Medical Examiner](https://www.ocme.dhhs.nc.gov/docrequest.asp)
+* [Department of Information Technology](https://it.nc.gov/contact/public-records-requests/public-record-request-form)
 
 #### Counties
 
