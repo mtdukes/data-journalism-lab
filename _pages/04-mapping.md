@@ -7,7 +7,7 @@ This workshop expands on the functionality of the `ggplot` package even further,
 
 ## Getting started
 
-Just like [last time]({{ site.baseurl }}/_pages/03-data-viz-relationships.html), let's set up a place to store our data and working files.
+Just like [last time](https://www.dropbox.com/s/kwrsme2oe4e0rum/nc_census_data.zip?dl=1), let's set up a place to store our data and working files.
 
 Somewhere in your computer's directory (it could be your Desktop or Documents folder, for example), create a new folder and give it a name (for example: `data_journalism_with_r`).
 
