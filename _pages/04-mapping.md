@@ -7,7 +7,7 @@ This workshop expands on the functionality of the `ggplot` package even further,
 
 ## Getting started
 
-Just like [last time](https://www.dropbox.com/s/kwrsme2oe4e0rum/nc_census_data.zip?dl=1), let's set up a place to store our data and working files.
+Just like [last time]({{ site.baseurl }}/_pages/03-data-viz-relationships.html), let's set up a place to store our data and working files.
 
 Somewhere in your computer's directory (it could be your Desktop or Documents folder, for example), create a new folder and give it a name (for example: `data_journalism_with_r`).
 
@@ -103,7 +103,7 @@ Census data itself doesn't include any actual _shapes_. We'll need to combine it
 
 ## Loading the data
 
-[Download this zip file of datasets]({{ site.baseurl }}/assets/data/) below by __right clicking__ the link and selecting "Save link as..."
+[Download this zip file of datasets](https://www.dropbox.com/s/kwrsme2oe4e0rum/nc_census_data.zip?dl=1) below by __right clicking__ the link and selecting "Save link as..."
 
 Save the file to your working directory and unzip it.
 
@@ -334,4 +334,3 @@ What questions can we ask – and answer – with the data we have?
 * [Census Reporter](https://censusreporter.org/)
 * [Carolina Demography](https://www.ncdemography.org/)
 * [IPUMS NHGIS](https://www.nhgis.org/)
-
