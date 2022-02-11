@@ -335,5 +335,3 @@ What questions can we ask – and answer – with the data we have?
 * [Carolina Demography](https://www.ncdemography.org/)
 * [IPUMS NHGIS](https://www.nhgis.org/)
 
-<div class="alert alert-success"><b>PRO TIP:</b> To execute multiple unchained lines of code, highlight the code block you want to run with your cursor and hit <kbd>CMD</kbd> + <kbd>Enter</kbd>.</div>
-
