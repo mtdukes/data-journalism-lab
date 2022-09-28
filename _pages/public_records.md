@@ -64,6 +64,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [N.C. State](https://ncsu.nextrequest.com/)
 * [UNC-Chapel Hill](https://unc.nextrequest.com/)
 * [UNC-Charlotte](https://unccharlotte.nextrequest.com/)
+* [UNC-Greensboro](https://uncgreensboro.nextrequest.com/)
 * [Winston-Salem State University](https://www.wssu.edu/public-records/show-records.aspx)
 
 #### Federal agencies
