@@ -38,6 +38,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 
 * [Mecklenburg County](https://mkbgcoeddprr.exterro.net/prr/prrportal.htm)
 * [Wake County](https://wakecounty.nextrequest.com/)
+* [Guilford County](https://guilfordcountync.nextrequest.com/)
 * [Buncombe County](https://www.buncombecounty.org/governing/depts/communications/default.aspx)
 
 #### Cities and towns
