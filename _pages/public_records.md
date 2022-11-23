@@ -44,6 +44,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 #### Cities and towns
 
 * [City of Raleigh](https://raleighnc.gov/form/public-records-request)
+	* [Raleigh/Wake County 911 dispatch calls and CAD logs](https://forms.office.com/Pages/ResponsePage.aspx?id=RuE68EXZJEmVwHtmHDDdu2RN12j4tVxIt0L2duWxfC1UNlpBTzA0NUpGQlZCTzU4RVROWk1WVzNKMy4u)
 * [City of Charlotte](https://charlottenc.seamlessdocs.com/f/RequestRecords)
 * [City of Durham](https://cityofdurhamnc.nextrequest.com/)
 * [Town of Chapel Hill](https://www.townofchapelhill.org/government/departments-services/communications-and-public-affairs/supporting-quality-governance/maintaining-public-records/public-records-request)
