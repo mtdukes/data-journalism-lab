@@ -33,6 +33,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Office of the Chief Medical Examiner](https://www.ocme.dhhs.nc.gov/docrequest.asp)
 * [Department of Information Technology](https://it.nc.gov/contact/public-records-requests/public-record-request-form)
 * [Department of Administration](https://forms.office.com/pages/responsepage.aspx?id=3IF2etC5mkSFw-zCbNftGV6z5aT2oV9HiNK6Oi04PhpUMDJCTElLVThBSDVYS0pCNlpMM1FTM09CSyQlQCN0PWcu)
+* [Administrative Office of the Courts](https://www.nccourts.gov/public-records-request)
 
 #### Counties
 
