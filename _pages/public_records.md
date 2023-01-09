@@ -34,6 +34,8 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Department of Information Technology](https://it.nc.gov/contact/public-records-requests/public-record-request-form)
 * [Department of Administration](https://forms.office.com/pages/responsepage.aspx?id=3IF2etC5mkSFw-zCbNftGV6z5aT2oV9HiNK6Oi04PhpUMDJCTElLVThBSDVYS0pCNlpMM1FTM09CSyQlQCN0PWcu)
 * [Administrative Office of the Courts](https://www.nccourts.gov/public-records-request)
+	* Bonus: [Court record retention schedules](https://www.documentcloud.org/documents/23567777-records-retention-and-disposition-schedules-2022)
+
 
 #### Counties
 
@@ -77,6 +79,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 
 ## Other resources
 
+* [State and local records retention schedules](https://archives.ncdcr.gov/government) // State Archives of NC
 * [Open Government Guide](https://www.rcfp.org/open-government-guide/) // RCFP
 * [FOIA wiki](https://foia.wiki/wiki/Main_Page) // RCFP
 * [FOIA 101](https://www.muckrock.com/project/foia-101-tips-and-tricks-to-make-you-a-transparency-master-234/) // Muckrock
