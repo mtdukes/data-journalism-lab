@@ -56,6 +56,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [City of Greensboro](https://www.greensboro-nc.gov/government/public-records-requests)
 * [City of Winston-Salem](https://www.cityofws.org/FormCenter/Fire-Department-7/FOIA-Request-172)
 * [City of Asheville](https://cityofashevillenc.nextrequest.com/)
+* [Town of Mooresville](https://townofmooresvillenc.nextrequest.com/)
 
 #### Public boards
 
