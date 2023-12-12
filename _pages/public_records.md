@@ -57,6 +57,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [City of Winston-Salem](https://www.cityofws.org/FormCenter/Fire-Department-7/FOIA-Request-172)
 * [City of Asheville](https://cityofashevillenc.nextrequest.com/)
 * [Town of Mooresville](https://townofmooresvillenc.nextrequest.com/)
+* [Town of Apex](https://www.cognitoforms.com/townofapex1/publicrecordsrequest)
 
 #### Public boards
 
