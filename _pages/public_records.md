@@ -44,6 +44,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Wake County](https://wakecounty.nextrequest.com/)
 * [Guilford County](https://guilfordcountync.nextrequest.com/)
 * [Buncombe County](https://www.buncombecounty.org/governing/depts/communications/default.aspx)
+* [Durham County](https://durhamcountync.nextrequest.com/)
 
 #### Cities and towns
 
@@ -62,6 +63,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 #### Public boards
 
 * [Charlotte-Mecklenburg Board of Education](https://cmsk12.nextrequest.com/)
+* [Durham County Board of Education](https://form.asana.com/?k=Y9FKwZJS9YePQKGYH4e6og&d=11451106657766)
 
 #### Colleges and universities
 
