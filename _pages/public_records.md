@@ -48,7 +48,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 
 #### Cities and towns
 
-* [City of Raleigh](https://raleighnc.gov/form/public-records-request)
+* [City of Raleigh](https://raleighnc.nextrequest.com/)
 	* [Raleigh/Wake County 911 dispatch calls and CAD logs](https://forms.office.com/Pages/ResponsePage.aspx?id=RuE68EXZJEmVwHtmHDDdu2RN12j4tVxIt0L2duWxfC1UNlpBTzA0NUpGQlZCTzU4RVROWk1WVzNKMy4u)
 * [City of Charlotte](https://charlottenc.seamlessdocs.com/f/RequestRecords)
 * [City of Durham](https://cityofdurhamnc.nextrequest.com/)
