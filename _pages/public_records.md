@@ -67,7 +67,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 
 #### Colleges and universities
 
-* [UNC System](https://publicrecords.northcarolina.edu/)
+* [UNC System](https://uncsystemoffice.highq.com/uncsystemoffice/renderSmartForm.action?formId=0d47908e-0c7e-4da9-91e0-d5927dbe7d62)
 * [Appalachian State](https://appstate.nextrequest.com/)
 * [N.C. Central](https://nccu.nextrequest.com/)
 * [N.C. State](https://ncsu.nextrequest.com/)
