@@ -11,7 +11,7 @@ Not sure where to start? If you're submitting a records request in North Carolin
 
 <div class="alert alert-secondary">
 	<p>Pursuant to state public records law, I request access to and copies of [[[WHAT YOU WANT]]]</p>
-	<p>I’d like copies of these records in electronic format, preferably in [[[HOW YOU WANT IT]]]. If you are unable to provide the records in this format for any reason, please let me know.</p>
+	<p>I’d like copies of these records electronically, preferably in [[[HOW YOU WANT IT]]]. If you are unable to provide the records in this format for any reason, please let me know.</p>
 	<p>If applicable, please provide these records as they are processed.</p>
 	<p>Please notify me in advance of any fees associated with this request, and if my request is denied in whole or part, I ask that you justify all deletions and redactions by reference to specific exemptions in the state open records act.</p>
 	<p>If you need any additional information to fulfill this request, please let me know.</p>
@@ -37,6 +37,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Administrative Office of the Courts](https://www.nccourts.gov/public-records-request)
 	* Bonus: [Court record retention schedules](https://www.documentcloud.org/documents/23567777-records-retention-and-disposition-schedules-2022)
 	* Bonus: [Court rules of recordkeeping](https://www.documentcloud.org/documents/23567781-superior-court-rules-of-recordkeeping)
+* [State Lottery Commission](http://records.lotterync.net/)
 
 #### Counties
 
