@@ -28,6 +28,8 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 
 #### State agencies
 
+* [Department of Environmental Quality](https://www.deq.nc.gov/accessdeq/requesting-public-records)
+* [Department of Transportation](https://www.ncdot.gov/news/public-records/Pages/public-records-request.aspx)
 * [Department of Public Instruction](https://docs.google.com/forms/d/e/1FAIpQLSclz_6zGDUZGoV_67Z3lwfoeopo3dhV_cnolDx7hYcw1Gd09A/viewform)
 * [State Board of Elections](https://ncsbe-nc.nextrequest.com/)
 * [Office of the Chief Medical Examiner](https://www.ocme.dhhs.nc.gov/docrequest.asp)
@@ -60,6 +62,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [City of Asheville](https://cityofashevillenc.nextrequest.com/)
 * [Town of Mooresville](https://townofmooresvillenc.nextrequest.com/)
 * [Town of Apex](https://www.cognitoforms.com/townofapex1/publicrecordsrequest)
+* [City of High Point](https://highpointnc.justfoia.com/Forms/Launch/d705cbd6-1396-49b7-939e-8d86c5a87deb)
 
 #### Public boards
 
