@@ -48,6 +48,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Guilford County](https://guilfordcountync.nextrequest.com/)
 * [Buncombe County](https://www.buncombecounty.org/governing/depts/communications/default.aspx)
 * [Durham County](https://durhamcountync.nextrequest.com/)
+* [Orange County](https://www.orangecountync.gov/FormCenter/Community-Relations-7/Public-Records-Request-118)
 
 #### Cities and towns
 
