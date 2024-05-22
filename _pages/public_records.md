@@ -59,11 +59,12 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Town of Chapel Hill](https://www.townofchapelhill.org/government/departments-services/communications-and-public-affairs/supporting-quality-governance/maintaining-public-records/public-records-request)
 * [City of Fayetteville](https://fayettevillenc.nextrequest.com/)
 * [City of Greensboro](https://www.greensboro-nc.gov/government/public-records-requests)
-* [City of Winston-Salem](https://www.cityofws.org/FormCenter/Fire-Department-7/FOIA-Request-172)
+* [City of Winston-Salem](https://www.cityofws.org/FormCenter/Information-Systems-32/Public-Information-Request-218)
 * [City of Asheville](https://cityofashevillenc.nextrequest.com/)
 * [Town of Mooresville](https://townofmooresvillenc.nextrequest.com/)
 * [Town of Apex](https://www.cognitoforms.com/townofapex1/publicrecordsrequest)
 * [City of High Point](https://highpointnc.justfoia.com/Forms/Launch/d705cbd6-1396-49b7-939e-8d86c5a87deb)
+* [Town of Holly Springs](https://hsforms.hollyspringsnc.us/Forms/Records)
 
 #### Public boards
 
