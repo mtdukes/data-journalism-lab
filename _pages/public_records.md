@@ -50,6 +50,7 @@ Know of any portals we're missing? Respond to [@mtdukes' Twitter thread here](ht
 * [Durham County](https://durhamcountync.nextrequest.com/)
 * [Orange County](https://www.orangecountync.gov/FormCenter/Community-Relations-7/Public-Records-Request-118)
 * [Union County](https://unioncountync.nextrequest.com/)
+* [Gaston County](https://www.gastongov.com/1118/Public-Records-Request)
 
 #### Cities and towns
 
